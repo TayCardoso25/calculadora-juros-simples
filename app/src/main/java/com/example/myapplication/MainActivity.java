@@ -79,5 +79,27 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+    private void calcular() {
+        try {
+            String capitalStr = editCapital.getText().toString();
+            String jurosStr = editJuros.getText().toString();
+            String taxaStr = editTaxa.getText().toString();
+            String prazoStr = editPrazo.getText().toString();
 
+            switch (criterioSelecionado) {
+                case "Capital":
+                    double j1 = Double.parseDouble(jurosStr);
+                    double i1 = Double.parseDouble(taxaStr);
+                    int t1 = Integer.parseInt(prazoStr);
+                    double c1 = (j1 * 100) / (i1 * t1);
+                    editCapital.setText(String.format("%.2f", c1));
+                    break;
+
+                case "Juros":
+                    double c2 = Double.parseDouble(capitalStr);
+                    double i2 = Double.parseDouble(taxaStr);
+                    int t2 = Integer.parseInt(prazoStr);
+                    double j2 = (c2 * i2 * t2) / 100;
+                    editJuros.setText(String.format("%.2f", j2));
+                    break;
 

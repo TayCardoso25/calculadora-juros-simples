@@ -102,4 +102,25 @@ public class MainActivity extends AppCompatActivity {
                     double j2 = (c2 * i2 * t2) / 100;
                     editJuros.setText(String.format("%.2f", j2));
                     break;
+                case "Taxa":
+                    double j3 = Double.parseDouble(jurosStr);
+                    double c3 = Double.parseDouble(capitalStr);
+                    int t3 = Integer.parseInt(prazoStr);
+                    double i3 = (j3 * 100) / (c3 * t3);
+                    editTaxa.setText(String.format("%.2f", i3));
+                    break;
+
+                case "Prazo":
+                    double j4 = Double.parseDouble(jurosStr);
+                    double c4 = Double.parseDouble(capitalStr);
+                    double i4 = Double.parseDouble(taxaStr);
+                    int t4 = (int) ((j4 * 100) / (c4 * i4));
+                    editPrazo.setText(String.valueOf(t4));
+                    break;
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, "Erro no cálculo. Verifique os valores.", Toast.LENGTH_SHORT).show();
+        }
+    }
+}
 

@@ -54,31 +54,5 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void habilitarCampos(String criterio) {
-        editCapital.setEnabled(true);
-        editJuros.setEnabled(true);
-        editTaxa.setEnabled(true);
-        editPrazo.setEnabled(true);
-
-        switch (criterio) {
-            case "Capital":
-                editCapital.setEnabled(false);
-                editCapital.setText("");
-                break;
-            case "Juros":
-                editJuros.setEnabled(false);
-                editJuros.setText("");
-                break;
-            case "Taxa":
-                editTaxa.setEnabled(false);
-                editTaxa.setText("");
-                break;
-            case "Prazo":
-                editPrazo.setEnabled(false);
-                editPrazo.setText("");
-                break;
-        }
-    }
-
 
 
